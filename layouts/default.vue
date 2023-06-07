@@ -61,10 +61,13 @@ a {
   transition: 0.5s;
   font-size: 0.875rem;
   display: inline-block;
+  border-bottom: 1px solid rgba(255, 244, 94, 1);
+  font-weight: normal;
 }
 
 a.option {
   border: 1px solid rgb(59, 184, 171);
+  border-radius: 9999rem;
 }
 
 a.cta {
@@ -106,6 +109,11 @@ a:hover, a:focus {
   .nav__nav-link {
       padding: 0.5rem 2rem;
       font-size: 1rem;
+      min-width: 11rem;
+      text-align: center;
+  }
+  .nav__nav-link:not(:last-child) {
+    margin-right: 0rem;
   }
 }
 </style>
