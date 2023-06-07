@@ -6,7 +6,10 @@
     "dev": "nuxt dev",
     "generate": "nuxt generate",
     "preview": "nuxt preview",
-    "postinstall": "nuxt prepare"
+    "postinstall": "nuxt prepare",
+    "migrate:latest": "knex migrate:latest",
+    "migrate:down": "knex migrate:down",
+    "migrate:up": "knex migrate:up"
   },
   "devDependencies": {
     "@nuxt/devtools": "latest",
