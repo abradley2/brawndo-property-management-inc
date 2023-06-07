@@ -3,7 +3,9 @@ import knex from 'knex'
 const client = knex({
   client: 'postgresql',
   connection: {
-    database: 'pure'
+    database: 'pure',
+    user: process.env.POSTGRES_USER,
+    password: process.env.POSTGRES_PASSWORD
   }
 })
 
