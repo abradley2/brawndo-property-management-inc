@@ -1,6 +1,7 @@
 <template>
   <div id="app">
-      <!-- router-->
-      <router-view></router-view> 
+    <NuxtLayout>
+      <NuxtPage />
+    </NuxtLayout>
   </div>
 </template>
