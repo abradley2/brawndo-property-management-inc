@@ -3,8 +3,8 @@ import type { Knex } from 'knex'
 import * as T from 'io-ts'
 
 const RequestDecoder = T.type({
-  agent_id: T.string,
-  property_id: T.string
+  agent_id: T.number,
+  property_id: T.number
 })
 
 export default defineEventHandler(async (event) => {

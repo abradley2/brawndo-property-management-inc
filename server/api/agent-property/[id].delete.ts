@@ -4,7 +4,7 @@ import type { Knex } from 'knex'
 export default defineEventHandler(async (event) => {
   const dbClient = event.context.db as Knex
 
-  const agentPropertyId = getRouterParam(event, 'agent-property-id')
+  const agentPropertyId = getRouterParam(event, 'id')
 
   const deleteResult = await dbClient.table('agent_property')
     .delete()
