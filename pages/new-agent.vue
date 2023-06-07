@@ -23,16 +23,16 @@ export default defineComponent({
         return
       }
 
-      const result = await fetch('/api/agent', {
+      const result = await fetch('/api/agents', {
         method: 'PUT',
         headers: {
           "Content-Type": "application/json"
         },
         body: JSON.stringify({
-          firstName: this.$data.firstName,
-          lastName: this.$data.lastName,
+          first_name: this.$data.firstName,
+          last_name: this.$data.lastName,
           email: this.$data.email,
-          mobileNumber: this.$data.mobileNumber,
+          mobile_number: this.$data.mobileNumber,
         })
       })
 
