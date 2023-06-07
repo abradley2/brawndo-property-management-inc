@@ -29,9 +29,6 @@ const agents = computed(() => {
 </script>
 
 <template>
-  <div>
-    <NuxtLink to="/agent/1">See Agent</NuxtLink>
-  </div>
   <div v-if="agentsError">
     Error: {{ agentsError.message }}
   </div>

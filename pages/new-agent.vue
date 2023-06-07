@@ -43,17 +43,20 @@ export default defineComponent({
 
       const resultJson = await result.json()
 
-      console.log(resultJson)
-
       this.$router.push('/agents')
     }
   },
   data(): Data {
     return {
       firstName: "",
+      firstNameError: undefined,
       lastName: "",
+      lastNameError: undefined,
       email: "",
+      emailError: undefined,
       mobileNumber: "",
+      mobileNumberError: undefined,
+      formSubmitError: undefined,
     }
   }
 })
@@ -76,6 +79,9 @@ export default defineComponent({
     <div>
       <label for="mobile-number">Mobile Number</label>
       <input id="mobile-number" type="text" v-model="mobileNumber" />
+    </div>
+    <div v-if="formSubmitError">
+      {{ formSubmitError }}
     </div>
     <button @click="trySubmit">Submit</button>
   </div>
