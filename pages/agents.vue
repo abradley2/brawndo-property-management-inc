@@ -35,14 +35,31 @@ const agents = computed(() => {
   <div v-else-if="noAgents">
     No agents found
   </div>
-  <div v-else-if="agents">
-    <div v-for="agent in agents" :key="agent.id">
-      <NuxtLink :to="agent.link">
+  <div v-else-if="agents" class="agent-list">
+    <div v-for="agent in agents" :key="agent.id" class="agent-list__agent">
+      <NuxtLink :to="agent.link" class="option">
         {{ agent.first_name }} {{  agent.last_name }}
       </NuxtLink>
     </div>
   </div>
-  <div>
-    <NuxtLink to="/new-agent">Create new agent</NuxtLink>
+  <div class="agent-list__cta">
+    <NuxtLink class="cta" to="/new-agent">Create new agent</NuxtLink>
   </div>
 </template>
+
+<style>
+.agent-list {
+  display: flex;
+  flex-direction: column;
+}
+.agent-list__agent {
+  text-align: center;
+}
+.agent-list__agent:not(:first-child) {
+  margin-top: 1rem;
+}
+.agent-list__cta {
+  text-align: center;
+  margin-top: 4rem;
+}
+</style>
