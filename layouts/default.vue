@@ -46,16 +46,40 @@ body {
   box-sizing: border-box;
 }
 
+.action-btn {
+  font-size: 0.75rem;
+  padding: 0.25rem 0.5rem;
+  border-radius: 0.125rem;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border: none;
+  margin: 0.125rem;
+}
+.action-btn:hover, action-btn:focus {
+  outline: none;
+  box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.315);
+}
+.action-btn--confirm-remove {
+  background-color: rgb(255, 0, 0);
+  color: rgb(255, 255, 255);
+  cursor: pointer;
+}
+.action-btn--cancel-remove {
+  background-color: rgb(255, 255, 255);
+  color: rgb(0, 0, 0);
+  cursor:pointer;
+}
 .nav {
   padding-top: 1rem;
   padding-bottom: 4rem;
   display: flex;
   width: 100%;
+  max-width: 48rem;
+  margin: 0 auto;
   justify-content: space-between;
 }
 
 a {
-  /** right downwards box shadow */
   box-shadow: 2px 4px 8px 2px rgba(0, 0, 0, 0.315);
   padding: 0.5rem 1rem;
   transition: 0.5s;
