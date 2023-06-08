@@ -29,7 +29,7 @@ export async function up (knex: Knex): Promise<void> {
     table.integer('person_id').unsigned().notNullable()
     table.integer('property_id').unsigned().notNullable()
 
-    table.foreign('person_id').references('id').inTable('person')
+    table.foreign('property_id').references('id').inTable('property')
     table.foreign('person_id').references('id').inTable('person')
   })
 }
