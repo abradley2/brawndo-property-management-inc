@@ -63,26 +63,42 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
-    <div>
-      <label for="first-name">First Name</label>
-      <input id="first-name" type="text" v-model="firstName" />
+  <div class="flex-grid">
+    <div class="form flex-grid__content">
+      <div class="form__form-group">
+        <label for="first-name" class="form-group__label">First Name</label>
+        <input id="first-name" type="text" v-model="firstName" class="form-group__input" />
+        <div v-if="firstNameError" class="form-group__error">
+          {{ firstNameError }}
+        </div>
+      </div>
+      <div class="form__form-group">
+        <label for="last-name" class="form-group__label">Last Name</label>
+        <input id="last-name" type="text" v-model="lastName" class="form-group__input" />
+        <div v-if="lastNameError" class="form-group__error">
+          {{ lastNameError }}
+        </div>
+      </div>
+      <div class="form__form-group">
+        <label for="email" class="form-group__label">Email</label>
+        <input id="email" type="text" v-model="email" class="form-group__input" />
+        <div v-if="emailError" class="form-group__error">
+          {{ emailError }}
+        </div>
+      </div>
+      <div class="form__form-group">
+        <label for="mobile-number" class="form-group__label">Mobile Number</label>
+        <input id="mobile-number" type="text" v-model="mobileNumber" class="form-group__input" />
+        <div v-if="mobileNumberError" class="form-group__error">
+          {{ mobileNumberError }}
+        </div>
+      </div>
+      <div v-if="formSubmitError">
+        {{ formSubmitError }}
+      </div>
+      <div class="form__form-group form__form-group--full">
+        <button @click="trySubmit" class="submit">Submit</button>
+      </div>
     </div>
-    <div>
-      <label for="last-name">Last Name</label>
-      <input id="last-name" type="text" v-model="lastName" />
-    </div>
-    <div>
-      <label for="email">Email</label>
-      <input id="email" type="text" v-model="email" />
-    </div>
-    <div>
-      <label for="mobile-number">Mobile Number</label>
-      <input id="mobile-number" type="text" v-model="mobileNumber" />
-    </div>
-    <div v-if="formSubmitError">
-      {{ formSubmitError }}
-    </div>
-    <button @click="trySubmit">Submit</button>
   </div>
 </template>

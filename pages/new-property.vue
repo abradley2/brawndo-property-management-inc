@@ -63,28 +63,32 @@ export default defineComponent({
 </script>
 
 <template>
-  <div>
-    <div>
-      <label for="address">Address</label>
-      <input id="address" v-model="address" />
-      <div v-if="addressError">{{ addressError }}</div>
+  <div class="flex-grid">
+    <div class="form flex-grid__content">
+      <div class="form__form-group">
+        <label for="address" class="form-group__label">Address</label>
+        <input type="text" id="address" v-model="address" class="form-group__input"/>
+        <div v-if="addressError" class="form-group__error">{{ addressError }}</div>
+      </div>
+      <div class="form__form-group">
+        <label for="city" class="form-group__label">City</label>
+        <input type="text" id="city" v-model="city" class="form-group__input"/>
+        <div v-if="cityError" class="form-group__error">{{ cityError }}</div>
+      </div>
+      <div class="form__form-group">
+        <label for="state" class="form-group__label">State</label>
+        <input type="text" id="state" v-model="state" class="form-group__input"/>
+        <div v-if="stateError" class="form-group__error">{{ stateError }}</div>
+      </div>
+      <div class="form__form-group">
+        <label for="zip-code" class="form-group__label">Zip Code</label>
+        <input type="text" id="zip-code" v-model="zip" class="form-group__input"/>
+        <div v-if="zipError" class="form-group__error">{{ zipError }}</div>
+      </div>
+      <div class="form__form-group form__form-group--full">
+        <div v-if="formSubmitError" class="form-group__error">{{ formSubmitError }}</div>
+        <button @click="trySubmit" class="submit">Submit</button>
+      </div>
     </div>
-    <div>
-      <label for="city">City</label>
-      <input id="city" v-model="city" />
-      <div v-if="cityError">{{ cityError }}</div>
-    </div>
-    <div>
-      <label for="state">State</label>
-      <input id="state" v-model="state" />
-      <div v-if="stateError">{{ stateError }}</div>
-    </div>
-    <div>
-      <label for="zip-code">Zip Code</label>
-      <input id="zip-code" v-model="zip" />
-      <div v-if="zipError">{{ zipError }}</div>
-    </div>
-    <div v-if="formSubmitError">{{ formSubmitError }}</div>
-    <button @click="trySubmit">Submit</button>
   </div>
 </template>

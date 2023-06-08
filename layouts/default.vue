@@ -119,7 +119,7 @@ a:hover, a:focus {
   }
 }
 
-*:focus, a:hover {
+*:focus, a:hover, button:hover {
     animation-name: outlineloop;
     animation-duration: 1s;
     animation-iteration-count: infinite;
@@ -138,6 +138,70 @@ a:hover, a:focus {
   }
   .nav__nav-link:not(:last-child) {
     margin-right: 0rem;
+  }
+}
+
+input[type=text] {
+  padding: 0.5rem 1rem;
+  border-radius: 0.125rem;
+  border: 0.125rem solid rgb(59, 184, 171);
+  background-color: rgba(255, 255, 255, 0.7);
+  font-size: 1rem;
+  margin: 0.25rem 0;
+  width: 100%;
+}
+
+input[type=text]:focus {
+  background-color: rgba(255, 255, 255, 1);
+}
+
+.flex-grid {
+  padding: 1rem;
+}
+
+.flex-grid__content {
+  margin: -1rem;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.form {
+  max-width: 42rem;
+  margin: 0 auto;
+}
+
+.form__form-group {
+  width: 100%;
+  padding: 0.5rem;
+}
+
+.form-group__error {
+  color: rgb(241, 75, 75);
+}
+
+button.submit {
+  background-color:  rgb(59, 184, 171);
+  color: white;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 0.125rem;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 3rem;
+  cursor: pointer;
+}
+
+button.submit:focus {
+  outline: none;
+}
+
+@media screen and (min-width: 36em) {
+  .form__form-group {
+    width: 50%;
+  }
+
+  .form__form-group--full {
+    width: 50%;
   }
 }
 </style>
