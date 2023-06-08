@@ -102,7 +102,7 @@ const assignAgentToProperty = async (propertyId: number) => {
   </div>
   <div class="assigned-property-list">
     <div v-for="property in agentPropertiesData" :key="property.id" class="assigned-properties-list__property">
-      <NuxtLink :to="`/property/${property.id}`" class="option">
+      <NuxtLink :to="`/property/${property.property_id}`" class="option">
         {{ property.address }}, {{  property.zip }}
       </NuxtLink>
       <br />
