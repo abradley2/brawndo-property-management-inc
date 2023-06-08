@@ -4,7 +4,7 @@ interface Property {
   address: string
   city: string
   state: string
-  zip_code: string
+  zip: string
 }
 
 const { error: propertiesError, data: propertiesData } 
@@ -38,7 +38,7 @@ const properties = computed(() => {
   <div v-else-if="properties" class="property-list">
     <div v-for="property in properties" :key="property.id" class="property-list__agent">
       <NuxtLink :to="property.link" class="option">
-        {{ property.address }}, {{ property.city }}, {{ property.state }} {{ property.zip_code }}
+        {{ property.address }}, {{ property.city }}, {{ property.state }}
       </NuxtLink>
     </div>
   </div>

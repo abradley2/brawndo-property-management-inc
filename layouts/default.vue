@@ -191,6 +191,32 @@ button.submit {
   cursor: pointer;
 }
 
+button.submit--small {
+  padding: 0.125rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 1.5rem;
+  margin-top: 0.25rem;
+}
+
+button.cancel {
+  background-color:  rgba(255, 255, 255, 0.7);
+  color: black;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  border-radius: 0.125rem;
+  border: none;
+  font-size: 1rem;
+  padding: 0.5rem 3rem;
+  cursor: pointer;
+}
+
+button.cancel--small {
+  padding: 0.125rem 1rem;
+  font-size: 0.75rem;
+  border-radius: 1.5rem;
+  margin-top: 0.25rem;
+}
+
 button.submit:focus {
   outline: none;
 }

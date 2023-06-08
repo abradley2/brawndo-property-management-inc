@@ -3,10 +3,16 @@ interface AgentProperty {
   id: number
   agent_id: number
   property_id: number
+  address: string
+  city: string
+  zip: string
 }
 
 interface Property {
   id: number
+  address: string
+  city: string
+  zip: string
 }
 
 const route = useRoute()
@@ -62,13 +68,55 @@ const assignAgentToProperty = async (propertyId: number) => {
 }
 </script>
 
+<style>
+.agent-properties-page {
+  max-width: 36rem;
+  padding: 1rem;
+  padding-top: 0rem;
+  margin: auto;
+}
+.assigned-properties-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.assigned-properties-list__property {
+  margin-top: 1.5rem;
+}
+
+.unassigned-properties-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.unassigned-properties-list__property {
+  margin-top: 1.5rem;
+}
+</style>
+
 <template>
-  <div v-for="property in agentPropertiesData" :key="property.id">
-    <pre>Assigned to: {{  JSON.stringify(property, null, 2) }}</pre>
-    <button @click="unassignAgentFromProperty(property.id)">Unassign</button>
+<div class="agent-properties-page">
+  <h3>Properties Assigned to Agent:</h3>
+  <div v-if="agentPropertiesData && agentPropertiesData.length === 0">
+    No assigned properties
   </div>
-  <div v-for="property in unassignedProperties">
-    <pre>{{  JSON.stringify(property, null, 2) }}</pre>
-    <button @click="assignAgentToProperty(property.id)">Assign</button>
+  <div class="assigned-property-list">
+    <div v-for="property in agentPropertiesData" :key="property.id" class="assigned-properties-list__property">
+      <NuxtLink :to="`/property/${property.id}`" class="option">
+        {{ property.address }}, {{  property.zip }}
+      </NuxtLink>
+      <br />
+      <button @click="unassignAgentFromProperty(property.id)" class="cancel cancel--small">Remove Assignment</button>
+    </div>
   </div>
+  <p><hr /></p>
+  <h3>Assignable Properties:</h3>
+  <div class="unassigned-property-list">
+    <div v-for="property in unassignedProperties" class="unassigned-properties-list__property">
+      <span> {{ property.address }}, {{  property.zip }}</span>
+      <br />
+      <button @click="assignAgentToProperty(property.id)" class="submit submit--small">Add Assignment</button>
+    </div>
+  </div>
+</div>
 </template>
