@@ -3,7 +3,7 @@ import type { Knex } from 'knex'
 import * as T from 'io-ts'
 
 const RequestDecoder = T.type({
-  id: T.union([T.string, T.undefined]),
+  id: T.union([T.number, T.undefined]),
   first_name: T.string,
   last_name: T.string,
   email: T.string,
@@ -34,7 +34,7 @@ export default defineEventHandler(async (event) => {
   }
 
   if (existing !== null) {
-    const updateResult = await dbClient.table('agent').update(requestBody)
+    const updateResult = await dbClient.table('agent').update(requestBody).where('id', requestBody.id)
 
     setResponseHeader(event, 'Content-Type', 'application/json')
     setResponseStatus(event, 200)
